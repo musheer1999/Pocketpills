@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "pocketpills"
+    }
+  },
+  "defaultProject": "pocketpills",
+  "cli": {
+    "analytics": "a93c2aed-490f-4528-a962-35923fa2c86b"
+  }
 }
