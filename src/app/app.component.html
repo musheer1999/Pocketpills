@@ -1,5 +1,14 @@
+
+
+
+
+
 <app-navbar></app-navbar>
-<app-homepage></app-homepage>
+<div>
+    <h1>{{message}}</h1>
+</div>
+<app-homepage (childEvent)="message=$event"  [parentData]="export"></app-homepage>
 
 <router-outlet></router-outlet>
+<app-new></app-new>
 <app-footer></app-footer>

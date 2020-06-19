@@ -32,12 +32,32 @@
     height: 50px;
     width: 200px;
 }
+
+.cl2{
+    color: red;
+}
+.cl1{
+    color:green
+}
 </style>
 
 
 
 <div class="div">
 
+    <!-- ng switch casse -->
+    <div [ngSwitch]="color">
+
+        <h1 *ngSwitchCase="'red'">red</h1>
+        <h1 *ngSwitchCase="'blue'">blue</h1>
+        <h1 *ngSwitchCase="'grey'">grey</h1>
+        <h1 *ngSwitchDefault> defa</h1>
+    </div>
+ <h1  [class]="cla">MUSHEER AHMAD</h1>
+       <h1 *ngIf="bool;else elseBlock"  >ng is true</h1>
+       <ng-template #elseBlock> <h1  >ng is false</h1></ng-template>
+      
+<h1>Welcome {{name}} at the server {{server}}</h1>
     <div class="row">
     <div class="column">
         <h2 style="font-size: 50px; line-height: 60px;">Stay Home,<br>
@@ -51,7 +71,7 @@
             </p>
             <p style="font-size: 20px;">Get started by entering your cell phone below</p>
             <div>
-                <input id="input" placeholder="Cell Phone" />&nbsp;&nbsp;&nbsp;
+                <input [(ngModel)]="greeting" id="input" placeholder="Cell Phone" />&nbsp;&nbsp;&nbsp;
                 <button id="btn"> Proceed Securely</button>
             </div>
             
@@ -62,8 +82,40 @@
     
     </div>
     
-    
 
+<!-- ng for loop -->
+
+    <div *ngFor="let color of colors;index as i;first as f"> 
+       <h1>{{f}}{{i}}  {{color}}</h1> 
+    </div>
+
+
+<!-- input data from app component to the child component -->
+    
+{{parentData}}
+
+<br><br><br><br>
+<button (click)="onfire()">export to the app component</button>
+<br><br><br>
+<hr>
+<h1>Pipes</h1>
+
+<h1>{{date}}</h1>
+<h1>{{date| date:'short'}}</h1>
+<h1>{{date| date:"shortDate"}}</h1>
+<h1>{{date | date:"shortTime"}}</h1>
+<h1>{{0.25 | percent}}</h1>
+<h1>{{5.123| number:'1.2-5'}}</h1>
+<h1>{{5.123| number:'2.2-5'}}</h1>
+<h1>{{name| uppercase}}</h1>
+<h1>{{name|lowercase}}</h1>
+<h1>{{name| titlecase}}</h1>
+<h1>{{name|slice:2-5}}</h1>
+<h1>{{object|json}}</h1>
+
+<h1 *ngFor=" let obja of objarray">
+    {{obja.name}}
+</h1>
 
     
     

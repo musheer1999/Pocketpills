@@ -1,0 +1,12 @@
+
+
+<div *ngFor="let st of stuinfo">
+    {{st|json}}
+</div>
+<br><br><br><br>
+<h1>{{EM}}</h1>
+<div *ngFor="let cov of covid">
+
+  country name:  {{cov.provinceState}} | deaths: {{cov.deaths}} | confirmed: {{cov.confirmed}}
+</div>
+
